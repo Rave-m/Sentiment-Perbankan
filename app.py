@@ -5,12 +5,10 @@ import os
 # Set page title
 st.set_page_config(page_title="Analisis Sentimen Perbankan")
 
-
-
 # Load model and preprocessing tools
 @st.cache_resource
 def load_model():
-    model_path = os.path.join("model", "model_naive_bayes.pkl")
+    model_path = os.path.join("model", "model_clf.pkl")
     tfidf_path = os.path.join("model", "tfidf.pkl")
     selector_path = os.path.join("model", "selector.pkl")
     
@@ -45,6 +43,7 @@ if st.button('Analisis Sentiment', type="primary"):
     st.write("\n")
     st.write("\n")
     st.write("\n")
+    
     if input_sentiment:
         if models_loaded:
             try:
